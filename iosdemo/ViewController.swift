@@ -33,6 +33,10 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
         btn2.backgroundColor=UIColor.green
         btn2.addTarget(self, action: #selector(btn2Click(btn:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(btn2)
+        let btn3 = UIButton(frame: CGRect(x: 300, y: 200, width: 50, height: 50))
+        btn3.backgroundColor=UIColor.systemBlue
+        btn3.addTarget(self, action: #selector(btn3Click), for: .touchUpInside)
+        view.addSubview(btn3)
 //        let screenh = UIScreen.main.applicationFrame.size.height
 //        let screenw = UIScreen.main.applicationFrame.size.width
 //        print("screenh=\(screenh),widht=\(screenw)")
@@ -53,38 +57,39 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
         myView?.frame=CGRectMake(0,300, 100, 100)
         myView?.backgroundColor=UIColor.green
         self.view.addSubview(myView!)
-        let avpip = AVPictureInPictureController()
-        let possible=avpip.isPictureInPicturePossible
-        print("possilbe=====\(possible)")
+    
         let url = "https://live.idbhost.com/05d2556e74e9408db0ee370b41536282/d4d54975f8a34b21bd9061ac0464a092-bafd00dba653149fda08dc8743bf8820-sd.mp4"
         //在线视频 方式1
 //        let playerItem = AVPlayerItem(url:URL(string: url)!)
-//        let player = AVPlayer(playerItem: playerItem)
-//        player.rate=1.0
-//        let playerLayer = AVPlayerLayer.init(player: player)
+//        let playerWithItem = AVPlayer(playerItem: playerItem)
+//        playerWithItem.rate=1.0
+//        let playerLayer = AVPlayerLayer.init(player: playerWithItem)
 //        playerLayer.videoGravity=AVLayerVideoGravity.resizeAspect
 //        playerLayer.frame=CGRect(x: 0, y: height/2, width: width, height: 300)
 //        self.view.layer.addSublayer(playerLayer)
 //        player.play()
+//        let avpip = AVPictureInPictureController.init(playerLayer: playerLayer)
+//        let supported=AVPictureInPictureController.isPictureInPictureSupported()
+//        print("possilbe=====,supported=\(supported)")
         
         //方式2
-        let player = AVPlayer(url: URL(string: url)!)
+//        let player = AVPlayer(url: URL(string: url)!)
 //        player.addObserver(<#T##observer: NSObject##NSObject#>, forKeyPath: <#T##String#>, context: <#T##UnsafeMutableRawPointer?#>)
-        vc = AVPlayerViewController()
-        vc?.player = player
-        vc?.view.frame=CGRect(x: 0, y: height/2, width: width, height: 300)
-        vc?.player?.addObserver(self, forKeyPath: "status",options:[.new],context: nil)
-        vc?.allowsPictureInPicturePlayback=true
-        addChild(vc!)
-        view.addSubview(vc!.view)
-        vc?.player?.play()
-        vc?.delegate=self
+//        vc = AVPlayerViewController()
+//        vc?.player = player
+//        vc?.view.frame=CGRect(x: 0, y: height/2, width: width, height: 300)
+//        vc?.player?.addObserver(self, forKeyPath: "status",options:[.new],context: nil)
+//        vc?.allowsPictureInPicturePlayback=true
+//        addChild(vc!)
+//        view.addSubview(vc!.view)
+//        vc?.player?.play()
+//        vc?.delegate=self
        
 //        present(vc, animated: true) {
 //            vc.player?.play()
 //        }
-        NotificationCenter.default.addObserver(self, selector: #selector(playbackFinished), name: .AVPlayerItemDidPlayToEndTime, object: nil)
-        
+//        NotificationCenter.default.addObserver(self, selector: #selector(playbackFinished), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+//        
         
 
         
@@ -116,6 +121,10 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
         print("btn2click \(btn)")
         Toast.toast(at:self.view, message: "toast")
         
+    }
+    @objc func btn3Click(){
+        let v = ThirdViewController()
+        self.navigationController?.pushViewController(v, animated: true)
     }
     func playerViewControllerWillStartPictureInPicture(_ playerViewController: AVPlayerViewController) {
         print("pip---willStart")
