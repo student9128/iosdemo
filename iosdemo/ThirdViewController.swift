@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
-class ThirdViewController :ViewController{
+class ThirdViewController :UIViewController{
     override func viewDidLoad() {
         if #available(iOS 13.0, *){
             let window:UIWindow?=UIApplication.shared.windows.first

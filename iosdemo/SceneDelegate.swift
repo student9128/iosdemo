@@ -18,21 +18,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         print("scene==willConnectTo=========")
         guard let _ = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: scene as! UIWindowScene)
-        let viewController = ViewController()
-        let nav=UINavigationController.init(rootViewController: viewController)
-        nav.navigationBar.backgroundColor=UIColor.systemGreen
+        self.window = UIWindow(windowScene: scene as! UIWindowScene)
+//        let viewController = ViewController()
+        let tabController = TabViewController()
+        let nav=UINavigationController.init(rootViewController: tabController)
+        nav.navigationBar.backgroundColor=UIColor.systemTeal
+//        nav.navigationBar.standardAppearance.backgroundColor=UIColor.purple
+        UIApplication.statusBarUIView?.backgroundColor=UIColor.systemGreen
+        UIApplication.shared.statusBarStyle=UIStatusBarStyle.lightContent
+        
 //        nav.setToolbarHidden(false, animated: true)
 //        let b2=UIBarButtonItem.init(systemItem:UIBarButtonItem.SystemItem.add)
 //        nav.setToolbarItems([b2], animated: true)
 //        nav.navigationBar.barStyle=UIBarStyle.black
 //        nav.navigationBar.barTintColor=UIColor.systemYellow
 //        window.rootViewController=viewController
-        window.rootViewController=nav
+        self.window?.rootViewController=nav
         self.window?.backgroundColor=UIColor.white
-        window.backgroundColor=UIColor.white
-        self.window=window;
-        window.makeKeyAndVisible()
+//        window.backgroundColor=UIColor.white
+//        self.window=window;
+        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

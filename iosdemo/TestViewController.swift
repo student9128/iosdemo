@@ -10,11 +10,11 @@ import AVFoundation
 import AVKit
 
 var vc:AVPlayerViewController?
-class ViewController: UIViewController,AVPlayerViewControllerDelegate {
-    var navigatonBar:UINavigationBar?
+class TestViewController: UIViewController,AVPlayerViewControllerDelegate {
+//    var navigatonBar:UINavigationBar?
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.statusBarUIView?.backgroundColor=UIColor.systemGreen
+//        UIApplication.statusBarUIView?.backgroundColor=UIColor.systemGreen
         // Do any additional setup after loading the view.
         print("viewDidLoad==")
 //        self.view.backgroundColor=UIColor.red
@@ -37,6 +37,11 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
         btn3.backgroundColor=UIColor.systemBlue
         btn3.addTarget(self, action: #selector(btn3Click), for: .touchUpInside)
         view.addSubview(btn3)
+        let btn4 = UIButton(frame: CGRect(x: 300, y: 250, width: 50, height: 50))
+        btn4.backgroundColor=UIColor.systemBlue
+        btn4.addTarget(self, action: #selector(btn4Click), for: .touchUpInside)
+        btn4.setTitle("btn4", for:.normal)
+        view.addSubview(btn4)
 //        let screenh = UIScreen.main.applicationFrame.size.height
 //        let screenw = UIScreen.main.applicationFrame.size.width
 //        print("screenh=\(screenh),widht=\(screenw)")
@@ -48,8 +53,8 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
 //        let statusbarHeihgt=UIApplication.shared.statusBarFrame.size.height;
         let statusbarHeihgt2 = self.view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0;
 //        print("width=\(width),height=\(height),nW=\(nativeWidth),nH=\(nativeHeight),top=\(String(describing: top)),sH=\(statusbarHeihgt),sh2=\(statusbarHeihgt2)")
-        navigatonBar = UINavigationBar(frame: CGRectMake(0, 54, width, 54))
-        navigatonBar?.backgroundColor=UIColor.yellow
+//        navigatonBar = UINavigationBar(frame: CGRectMake(0, 54, width, 54))
+//        navigatonBar?.backgroundColor=UIColor.yellow
         
         let customTv = CustomTextView.init()
         let x=customTv.addTextView(text: "自定义TextView")
@@ -57,8 +62,16 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
         myView?.frame=CGRectMake(0,300, 100, 100)
         myView?.backgroundColor=UIColor.green
         self.view.addSubview(myView!)
+        
+        let customView = CustomView.init()
+        let cView = customView.addCustomView().view
+        cView?.frame=CGRect(x: 105, y: 300, width: 200, height: 100)
+        cView?.backgroundColor=UIColor.systemPink
+        view.addSubview(cView!)
+        
     
         let url = "https://live.idbhost.com/05d2556e74e9408db0ee370b41536282/d4d54975f8a34b21bd9061ac0464a092-bafd00dba653149fda08dc8743bf8820-sd.mp4"
+//        let url="https://live.idbhost.com/eadfd6c0da6a71ed80020764a3fc0102/e6fb7e66e4c949aba1429169661b8a14-6922121282a142cc4fecd0f78c7a4f8a-sd.m3u8"
         //在线视频 方式1
 //        let playerItem = AVPlayerItem(url:URL(string: url)!)
 //        let playerWithItem = AVPlayer(playerItem: playerItem)
@@ -73,20 +86,20 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
 //        print("possilbe=====,supported=\(supported)")
         
         //方式2
-//        let player = AVPlayer(url: URL(string: url)!)
+        let player = AVPlayer(url: URL(string: url)!)
 //        player.addObserver(<#T##observer: NSObject##NSObject#>, forKeyPath: <#T##String#>, context: <#T##UnsafeMutableRawPointer?#>)
-//        vc = AVPlayerViewController()
-//        vc?.player = player
-//        vc?.view.frame=CGRect(x: 0, y: height/2, width: width, height: 300)
-//        vc?.player?.addObserver(self, forKeyPath: "status",options:[.new],context: nil)
-//        vc?.allowsPictureInPicturePlayback=true
-//        addChild(vc!)
-//        view.addSubview(vc!.view)
-//        vc?.player?.play()
-//        vc?.delegate=self
+        vc = AVPlayerViewController()
+        vc?.player = player
+        vc?.view.frame=CGRect(x: 0, y: height/2, width: width, height: 300)
+        vc?.player?.addObserver(self, forKeyPath: "status",options:[.new],context: nil)
+        vc?.allowsPictureInPicturePlayback=true
+        addChild(vc!)
+        view.addSubview(vc!.view)
+        vc?.player?.play()
+        vc?.delegate=self
        
-//        present(vc, animated: true) {
-//            vc.player?.play()
+//        present(vc!, animated: true) {
+//            vc?.player?.play()
 //        }
 //        NotificationCenter.default.addObserver(self, selector: #selector(playbackFinished), name: .AVPlayerItemDidPlayToEndTime, object: nil)
 //        
@@ -97,6 +110,10 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
     deinit{
         vc?.player?.removeObserver(self, forKeyPath: "status")
         NotificationCenter.default.removeObserver(self)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.statusBarUIView?.backgroundColor=UIColor.systemGreen
+        navigationController?.navigationBar.backgroundColor=UIColor.systemGreen
     }
     override func viewWillDisappear(_ animated: Bool) {
         print("will Disappear")
@@ -124,6 +141,10 @@ class ViewController: UIViewController,AVPlayerViewControllerDelegate {
     }
     @objc func btn3Click(){
         let v = ThirdViewController()
+        self.navigationController?.pushViewController(v, animated: true)
+    }
+    @objc func btn4Click(){
+        let v = FourthViewController()
         self.navigationController?.pushViewController(v, animated: true)
     }
     func playerViewControllerWillStartPictureInPicture(_ playerViewController: AVPlayerViewController) {

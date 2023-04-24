@@ -39,3 +39,4 @@ static var statusBarUIView: UIView? {
     return nil
   }
 }
+let screenWidth = UIScreen.main.bounds.size.width
