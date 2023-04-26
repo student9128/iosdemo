@@ -31,9 +31,14 @@ class UIKitListViewController:UIViewController,UITableViewDelegate,UITableViewDa
 //        print("path=\(indexPath),\(indexPath.row),\(indexPath.section),\(indexPath.count),\(indexPath.startIndex)")
         cell?.selectedBackgroundView=UIView()
         cell?.selectedBackgroundView?.backgroundColor=UIColor.systemBlue
-        cell?.setContent(array.object(at: indexPath.section) as? String ?? "")
+        let content: String = array.object(at: indexPath.section) as? String ?? ""
+        cell?.setContent(content)
         cell?.setAvatar("\(indexPath.section)")
         cell?.setColor(Color.random())
+//        cell?.isUserInteractionEnabled=true
+        cell?.onTapAction={
+            print("点击了\(indexPath.section),\(content)")
+        }
 //        cell?.textLabel?.text=array.object(at: indexPath.section) as? String
 //        cell?.textLabel?.textColor=UIColor.white
         return cell!

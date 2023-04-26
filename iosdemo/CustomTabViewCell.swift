@@ -10,6 +10,7 @@ import UIKit
 import SwiftUI
 class CustomTabViewCell:UITableViewCell{
     private var tabCellModel = TabCellModel()
+    var onTapAction: (() -> Void)?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 //        let listViewItem=ListViewItem(tabCellModel: tabCellModel).environmentObject(tabCellModel) 将UIHostingController 的参数改为listViewItem
@@ -29,8 +30,13 @@ class CustomTabViewCell:UITableViewCell{
         cell.view.backgroundColor=UIColor.clear
         //可以通过这个赋值
 //        UserDefaults.standard.set(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+              self.addGestureRecognizer(tapRecognizer)
     }
-    
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+         onTapAction?()
+     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

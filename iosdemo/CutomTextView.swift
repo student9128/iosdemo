@@ -15,7 +15,9 @@ import SwiftUI
 struct MyTextView:View{
     var text:String=""
     var body: some View{
-        Text(text)
+        Text(text).onTapGesture {
+            print("hello生效了吗")
+        }
     }
 }
 @objc class CustomView:NSObject{
