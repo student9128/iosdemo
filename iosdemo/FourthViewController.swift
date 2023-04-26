@@ -30,6 +30,7 @@ class FourthViewController : UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title="第四"
         let tableView = UITableView()
         view.addSubview(tableView)
         tableView.snp.makeConstraints({(make)in

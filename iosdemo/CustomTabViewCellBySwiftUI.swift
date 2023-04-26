@@ -28,6 +28,28 @@ struct ListViewItem:View{
                
             }.frame(width: 50,height: 50)
             .clipShape(Circle())
+            let color:Color = tabCellModel.color
+            color.overlay{
+                Text("\(tabCellModel.avatar)")
+                    .foregroundColor(.white)
+                    .padding(.zero)
+            }.frame(width: 50,height: 50)
+                .clipShape(Circle())
+            //测试加圆形背景的写法
+//            Text("13哈哈哈哈哈")
+//              .padding()
+//              .background(.white)
+//              .fixedSize()
+//              .frame(width: 20)
+//              .border(Color.blue)
+//              .clipShape(Circle())
+//            Text("13")
+//              .padding()
+//              .overlay(
+//                Circle()
+//                    .stroke(.white, lineWidth: 4)
+//                  .padding(6)
+//              )
             //写法二
             //            Group{
 //                            Text("\(tabCellModel.avatar)")

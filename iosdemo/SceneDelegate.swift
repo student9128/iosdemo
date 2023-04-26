@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let viewController = ViewController()
         let tabController = TabViewController()
         let nav=UINavigationController.init(rootViewController: tabController)
-        nav.navigationBar.backgroundColor=UIColor.systemTeal
+//        nav.navigationBar.backgroundColor=UIColor.systemTeal
 //        nav.navigationBar.standardAppearance.backgroundColor=UIColor.purple
         UIApplication.statusBarUIView?.backgroundColor=UIColor.systemGreen
         UIApplication.shared.statusBarStyle=UIStatusBarStyle.lightContent
@@ -34,7 +34,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        nav.navigationBar.barTintColor=UIColor.systemYellow
 //        window.rootViewController=viewController
         self.window?.rootViewController=nav
-        self.window?.backgroundColor=UIColor.white
+        let bgColor=UIColor(red: 0xf6/255.0, green: 0xf1/255.0, blue: 0xe9/255.0, alpha: 1.0)
+        self.window?.backgroundColor=bgColor
 //        window.backgroundColor=UIColor.white
 //        self.window=window;
         self.window?.makeKeyAndVisible()

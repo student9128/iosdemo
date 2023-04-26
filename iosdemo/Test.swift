@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class Test:UIViewController{
+class Test:BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -15,5 +15,6 @@ class Test:UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.statusBarUIView?.backgroundColor=UIColor.red
         self.navigationController?.navigationBar.backgroundColor=UIColor.red
+        self.navigationController?.navigationBar.topItem?.title = "Test"
     }
 }

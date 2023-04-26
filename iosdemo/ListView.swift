@@ -1,15 +1,32 @@
 //
-//  UIKitStudyViewController.swift
+//  ListView.swift
 //  iosdemo
 //
-//  Created by Kevin Jing on 2023/4/23.
+//  Created by Kevin Jing on 2023/4/25.
 //
 
 import Foundation
 import UIKit
 import SwiftUI
-class UIKitListViewController:UIViewController,UITableViewDelegate,UITableViewDataSource{
-    var array:NSArray=["UILabel","UIButton","UITextField","UITextView","UIToolBar","UINavigationBar","UITabBarController","UISegmentedControl","UITableView","UICollectionView","UISlider","UIDatePicker","UISwitch","UIImageView","UIWebView","UIScrollView","Stack View","AVAudioPlayer","MPMoviePlayerController"]
+class ListView:UITableView,UITableViewDelegate,UITableViewDataSource{
+    var array:NSArray = []
+//    let arr=Array<String>()
+    func initListView(data:NSArray){
+//        let temop = array as![String]
+//        let arr=temop+data as![String]
+//        print(arr)
+        array=data
+        reloadData()
+    }
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame:frame, style: style)
+        self.delegate=self
+        self.dataSource=self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -19,7 +36,6 @@ class UIKitListViewController:UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellID="UIKitWidgetNameList"
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID) as? CustomTabViewCell
@@ -36,20 +52,9 @@ class UIKitListViewController:UIViewController,UITableViewDelegate,UITableViewDa
         cell?.setColor(Color.random())
 //        cell?.textLabel?.text=array.object(at: indexPath.section) as? String
 //        cell?.textLabel?.textColor=UIColor.white
+        print("\(array.count)")
         return cell!
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("UIKitListViewController")
-        view.backgroundColor=UIColor.blue
-        let tableView = UITableView(frame: self.view.frame, style: UITableView.Style.plain)
     
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints({(make)in
-            make.edges.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        })
-        tableView.delegate=self
-        tableView.dataSource=self
-    }
 }

@@ -10,13 +10,13 @@ import AVFoundation
 import AVKit
 
 var vc:AVPlayerViewController?
-class TestViewController: UIViewController,AVPlayerViewControllerDelegate {
+class TestViewController: BaseViewController,AVPlayerViewControllerDelegate {
 //    var navigatonBar:UINavigationBar?
     override func viewDidLoad() {
         super.viewDidLoad()
 //        UIApplication.statusBarUIView?.backgroundColor=UIColor.systemGreen
         // Do any additional setup after loading the view.
-        print("viewDidLoad==")
+        print("viewDidLoad==test")
 //        self.view.backgroundColor=UIColor.red
         let btn = UIButton.init()
         btn.frame=CGRectMake(100,100, 100, 100)
@@ -49,10 +49,11 @@ class TestViewController: UIViewController,AVPlayerViewControllerDelegate {
         let height = UIScreen.main.bounds.size.height
         let nativeWidth=UIScreen.main.nativeBounds.width;
         let nativeHeight=UIScreen.main.nativeBounds.height;
-//        let top=UIApplication.shared.keyWindow?.safeAreaInsets.top;
-//        let statusbarHeihgt=UIApplication.shared.statusBarFrame.size.height;
+        let top=UIApplication.shared.keyWindow?.safeAreaInsets.top;
+        let statusbarHeihgt=UIApplication.shared.statusBarFrame.size.height;
         let statusbarHeihgt2 = self.view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0;
-//        print("width=\(width),height=\(height),nW=\(nativeWidth),nH=\(nativeHeight),top=\(String(describing: top)),sH=\(statusbarHeihgt),sh2=\(statusbarHeihgt2)")
+        let navHeight=self.navigationController?.navigationBar.bounds
+        print("width=\(width),height=\(height),nW=\(nativeWidth),nH=\(nativeHeight),top=\(String(describing: top)),sH=\(statusbarHeihgt),sh2=\(statusbarHeihgt2),nav=\(navHeight)")
 //        navigatonBar = UINavigationBar(frame: CGRectMake(0, 54, width, 54))
 //        navigatonBar?.backgroundColor=UIColor.yellow
         
@@ -111,9 +112,20 @@ class TestViewController: UIViewController,AVPlayerViewControllerDelegate {
         vc?.player?.removeObserver(self, forKeyPath: "status")
         NotificationCenter.default.removeObserver(self)
     }
+    override func setStatusBar() -> UIColor {
+        return UIColor.systemGreen
+    }
+    override func setTitleAttrs(_ title: UILabel) {
+        title.text="测试"
+    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        UIApplication.statusBarUIView?.backgroundColor=UIColor.systemGreen
+//        navigationController?.navigationBar.backgroundColor=UIColor.systemGreen
+//    }
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.statusBarUIView?.backgroundColor=UIColor.systemGreen
-        navigationController?.navigationBar.backgroundColor=UIColor.systemGreen
+        self.navigationController?.navigationBar.backgroundColor=UIColor.systemGreen
+        self.navigationController?.navigationBar.topItem?.title = "VC"
     }
     override func viewWillDisappear(_ animated: Bool) {
         print("will Disappear")

@@ -40,3 +40,6 @@ static var statusBarUIView: UIView? {
   }
 }
 let screenWidth = UIScreen.main.bounds.size.width
+let screenHeight = UIScreen.main.bounds.size.height
+let nativeScreenWidth=UIScreen.main.nativeBounds.width;
+let nativeScreenHeight=UIScreen.main.nativeBounds.height;

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 class CustomTabViewCell:UITableViewCell{
     private var tabCellModel = TabCellModel()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -18,7 +19,7 @@ class CustomTabViewCell:UITableViewCell{
         self.addSubview(cell.view)
         cell.view.snp.makeConstraints({make in
 //            make.width.equalTo(200)
-            make.height.equalTo(50)
+//            make.height.equalTo(50)
 //            make.height.equalTo(50)
             make.left.equalTo(self).offset(15)
             make.right.equalTo(self).offset(-15)
@@ -38,6 +39,9 @@ class CustomTabViewCell:UITableViewCell{
     }
     func setContent(_ content:String){
         tabCellModel.content=content
+    }
+    func setColor(_ color:Color){
+        tabCellModel.color=color
     }
     
 }
