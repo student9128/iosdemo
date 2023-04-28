@@ -45,22 +45,12 @@ class Home :BaseViewController{
             make.topMargin.equalTo(20)
             make.centerX.equalTo(self.view.center)
         })
-        
-        contentView=UIView()
-        view.addSubview(contentView!)
-        contentView?.snp.makeConstraints({(make)in
-            make.width.equalTo(screenWidth)
-            make.top.equalTo(segment!).offset(40)
-//            make.bottom.equalTo(self.view).offset(-49-bottomPadding)
-            make.bottom.equalTo(self.view)
-        })
-        
-        contentView?.inputViewController?.addChild(onView)
-        contentView?.addSubview(onView.view)
+        addChild(onView)
+        view.addSubview(onView.view)
         onView.view.snp.makeConstraints({make in
             make.width.equalTo(screenWidth)
-            make.top.equalTo(self.contentView!)
-            make.bottom.equalTo(self.contentView!)
+            make.top.equalTo(segment!).offset(40)
+            make.bottom.equalTo(self.view)
         })
         
     }
@@ -92,29 +82,28 @@ class Home :BaseViewController{
    @objc func clickSegment(seg:UISegmentedControl){
         switch seg.selectedSegmentIndex{
         case 0:
-            if(contentView!.subviews.contains(onView.view)){
-                contentView!.bringSubviewToFront(onView.view)
+            if(view.subviews.contains(onView.view)){
+                view.bringSubviewToFront(onView.view)
             }else{
-                
-                contentView?.inputViewController?.addChild(onView)
-                contentView?.addSubview(onView.view)
+
+                addChild(onView)
+                view.addSubview(onView.view)
             }
             
-//            replaceController(oldController: secView, newController: onView)
             break
         case 1:
-            if(contentView!.subviews.contains(secView.view)){
-                contentView!.bringSubviewToFront(secView.view)
+            if(view.subviews.contains(secView.view)){
+            view.bringSubviewToFront(secView.view)
             }else{
-                contentView?.inputViewController?.addChild(secView)
-                contentView?.addSubview(secView.view)
+                addChild(secView)
+                view.addSubview(secView.view)
                 secView.view.snp.makeConstraints({make in
                     make.width.equalTo(screenWidth)
-                    make.top.equalTo(self.contentView!)
-                    make.bottom.equalTo(self.contentView!)
+                    make.top.equalTo(segment!).offset(40)
+                    ////            make.bottom.equalTo(self.view).offset(-49-bottomPadding)
+                    make.bottom.equalTo(self.view)
                 })
             }
-//            replaceController(oldController: onView, newController: secView)
             break
         default: break
             

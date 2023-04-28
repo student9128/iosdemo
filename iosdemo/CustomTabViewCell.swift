@@ -36,6 +36,7 @@ class CustomTabViewCell:UITableViewCell{
     }
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
          onTapAction?()
+        
      }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
