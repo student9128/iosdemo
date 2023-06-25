@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03E7BEB87FF281F1034E2360 /* Pods_iosdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50E4632AA4013E20C8609E6 /* Pods_iosdemo.framework */; };
 		070BABBF76F2B6453220901B /* Pods_iosdemo_iosdemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889D57FD92D4E8809DA71017 /* Pods_iosdemo_iosdemoUITests.framework */; };
+		74155D2B2A47E40000440A8B /* PictureInPictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74155D2A2A47E40000440A8B /* PictureInPictureManager.swift */; };
+		74155D2D2A47E60800440A8B /* SixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74155D2C2A47E60800440A8B /* SixViewController.swift */; };
+		74155D302A47E9E500440A8B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74155D2F2A47E9E400440A8B /* AVKit.framework */; };
+		74155D322A47E9EE00440A8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74155D312A47E9EE00440A8B /* AVFoundation.framework */; };
 		7419299129E317B700CF3A51 /* MGSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7419299029E317B700CF3A51 /* MGSLabel.swift */; };
 		7419299329E317CF00CF3A51 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7419299229E317CF00CF3A51 /* Toast.swift */; };
 		7419299529E3A57C00CF3A51 /* CutomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7419299429E3A57C00CF3A51 /* CutomTextView.swift */; };
@@ -18,6 +23,7 @@
 		7440400229ED46F300E2DAAF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440400129ED46F300E2DAAF /* Home.swift */; };
 		7440400429ED471100E2DAAF /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440400329ED471100E2DAAF /* Test.swift */; };
 		7474948D29E7D76C00391854 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474948C29E7D76C00391854 /* UIDeviceExtension.swift */; };
+		749FEF8B2A481B350003B6D3 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749FEF8A2A481B350003B6D3 /* VideoPlayer.swift */; };
 		74A8504329DA6E0E0032823A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A8504229DA6E0E0032823A /* AppDelegate.swift */; };
 		74A8504529DA6E0E0032823A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A8504429DA6E0E0032823A /* SceneDelegate.swift */; };
 		74A8504729DA6E0E0032823A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A8504629DA6E0E0032823A /* TestViewController.swift */; };
@@ -66,6 +72,10 @@
 		015EF945641D0AF99A0E9F50 /* Pods_iosdemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosdemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CAD43FF6409F956A7FF9A1 /* Pods-iosdemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosdemoTests.release.xcconfig"; path = "Target Support Files/Pods-iosdemoTests/Pods-iosdemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E766DF573671699CE409A76 /* Pods-iosdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosdemo.debug.xcconfig"; path = "Target Support Files/Pods-iosdemo/Pods-iosdemo.debug.xcconfig"; sourceTree = "<group>"; };
+		74155D2A2A47E40000440A8B /* PictureInPictureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureInPictureManager.swift; sourceTree = "<group>"; };
+		74155D2C2A47E60800440A8B /* SixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixViewController.swift; sourceTree = "<group>"; };
+		74155D2F2A47E9E400440A8B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		74155D312A47E9EE00440A8B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7419299029E317B700CF3A51 /* MGSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGSLabel.swift; sourceTree = "<group>"; };
 		7419299229E317CF00CF3A51 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		7419299429E3A57C00CF3A51 /* CutomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutomTextView.swift; sourceTree = "<group>"; };
@@ -77,6 +87,7 @@
 		7440400129ED46F300E2DAAF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		7440400329ED471100E2DAAF /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		7474948C29E7D76C00391854 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		749FEF8A2A481B350003B6D3 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		74A8503F29DA6E0E0032823A /* iosdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A8504229DA6E0E0032823A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74A8504429DA6E0E0032823A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +129,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74155D302A47E9E500440A8B /* AVKit.framework in Frameworks */,
+				03E7BEB87FF281F1034E2360 /* Pods_iosdemo.framework in Frameworks */,
+				74155D322A47E9EE00440A8B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +170,8 @@
 		41C26EF22EDB88A51FCAA578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74155D312A47E9EE00440A8B /* AVFoundation.framework */,
+				74155D2F2A47E9E400440A8B /* AVKit.framework */,
 				7419299629E3B23600CF3A51 /* iosdemo.xcodeproj */,
 				A50E4632AA4013E20C8609E6 /* Pods_iosdemo.framework */,
 				889D57FD92D4E8809DA71017 /* Pods_iosdemo_iosdemoUITests.framework */,
@@ -166,6 +182,8 @@
 		};
 		7419299729E3B23600CF3A51 /* Products */ = {
 			isa = PBXGroup;
+			children = (
+			);
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -207,6 +225,7 @@
 				74A8504629DA6E0E0032823A /* TestViewController.swift */,
 				74403FFD29E933C500E2DAAF /* CustomTabs.swift */,
 				74C2B91829E300EF00C84FEE /* SecondViewController.swift */,
+				74155D2C2A47E60800440A8B /* SixViewController.swift */,
 				74CE2B1A29E79DCC005A6258 /* ThirdViewController.swift */,
 				74A8504829DA6E0E0032823A /* Main.storyboard */,
 				74A8504B29DA6E0F0032823A /* Assets.xcassets */,
@@ -225,6 +244,8 @@
 				74F2779929F52EB600F90016 /* CustomTabViewCell.swift */,
 				74F2779B29F53BE800F90016 /* TableCellModel.swift */,
 				74E5A93E29F7AE2D003431C3 /* FifthViewController.swift */,
+				74155D2A2A47E40000440A8B /* PictureInPictureManager.swift */,
+				749FEF8A2A481B350003B6D3 /* VideoPlayer.swift */,
 			);
 			path = iosdemo;
 			sourceTree = "<group>";
@@ -506,9 +527,11 @@
 				7419299129E317B700CF3A51 /* MGSLabel.swift in Sources */,
 				74F2779229F4C98900F90016 /* UIImageExtension.swift in Sources */,
 				74E5A93D29F77C3F003431C3 /* BaseViewController.swift in Sources */,
+				749FEF8B2A481B350003B6D3 /* VideoPlayer.swift in Sources */,
 				74F2779629F514A300F90016 /* SwiftUIListViewController.swift in Sources */,
 				74F2779E29F68EB300F90016 /* ColorExtentsion.swift in Sources */,
 				74CE2B1B29E79DCC005A6258 /* ThirdViewController.swift in Sources */,
+				74155D2D2A47E60800440A8B /* SixViewController.swift in Sources */,
 				74403FFE29E933C500E2DAAF /* CustomTabs.swift in Sources */,
 				74C2B91B29E30DE900C84FEE /* UtilX.swift in Sources */,
 				7440400429ED471100E2DAAF /* Test.swift in Sources */,
@@ -521,6 +544,7 @@
 				74A8504729DA6E0E0032823A /* TestViewController.swift in Sources */,
 				7474948D29E7D76C00391854 /* UIDeviceExtension.swift in Sources */,
 				74A8504329DA6E0E0032823A /* AppDelegate.swift in Sources */,
+				74155D2B2A47E40000440A8B /* PictureInPictureManager.swift in Sources */,
 				74E7969529F8D0D700BBF4B4 /* UILabelViewController.swift in Sources */,
 				74A8504529DA6E0E0032823A /* SceneDelegate.swift in Sources */,
 				74E5A93F29F7AE2D003431C3 /* FifthViewController.swift in Sources */,

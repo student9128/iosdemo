@@ -27,6 +27,23 @@ class TestViewController: BaseViewController,AVPlayerViewControllerDelegate {
         btn.addTarget(self, action: #selector(click), for: UIControl.Event.touchUpInside)
         self.view.addSubview(btn)
         
+        let btnCopy = UIButton.init()
+        btnCopy.frame=CGRectMake(220,100, 100, 50)
+        btnCopy.setTitle("测试按钮Copy", for: UIControl.State.normal)
+        btnCopy.tintColor=UIColor.systemPink
+        btnCopy.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        btnCopy.backgroundColor=UIColor.systemPink
+        btnCopy.addTarget(self, action: #selector(clickCopy), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(btnCopy)
+        let btnCopy1 = UIButton.init()
+        btnCopy1.frame=CGRectMake(220,152, 100, 50)
+        btnCopy1.setTitle("关闭pip", for: UIControl.State.normal)
+        btnCopy1.tintColor=UIColor.systemPink
+        btnCopy1.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        btnCopy1.backgroundColor=UIColor.purple
+        btnCopy1.addTarget(self, action: #selector(closePip), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(btnCopy1)
+        
         let btn2=UIButton.init(type: UIButton.ButtonType.system)
         btn2.setTitle("hello", for: UIControl.State.normal)
         btn2.frame=CGRect(origin: CGPoint(x: 100, y: 210), size: CGSize(width: 100, height: 50))
@@ -96,7 +113,7 @@ class TestViewController: BaseViewController,AVPlayerViewControllerDelegate {
         vc?.allowsPictureInPicturePlayback=true
         addChild(vc!)
         view.addSubview(vc!.view)
-        vc?.player?.play()
+//        vc?.player?.play()
         vc?.delegate=self
        
 //        present(vc!, animated: true) {
@@ -141,8 +158,21 @@ class TestViewController: BaseViewController,AVPlayerViewControllerDelegate {
     @objc func playbackFinished(){
         print("Player ends playing video")
     }
+    @objc func closePip(){
+        PictureInPictureManager.shared.stopPip()
+    }
+    @objc func clickCopy(){
+        PictureInPictureManager.shared.stopPip()
+        DispatchQueue.main.asyncAfter(deadline:.now()+0.3, execute: {
+            print("hello")
+            let v=SixViewController()
+            self.navigationController?.pushViewController(v, animated: true)
+        })
+     
+    }
     @objc func click(){
         print("hello")
+        
         let v=SecondViewController()
         self.navigationController?.pushViewController(v, animated: true)
     }

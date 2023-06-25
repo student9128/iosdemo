@@ -7,6 +7,7 @@ target 'iosdemo' do
 
   # Pods for iosdemo
     pod 'SnapKit', '~> 5.6.0'
+
   target 'iosdemoTests' do
     inherit! :search_paths
     # Pods for testing

@@ -49,6 +49,7 @@ class SecondViewController:UIViewController,AVPictureInPictureControllerDelegate
         if AVPictureInPictureController.isPictureInPictureSupported(){
             pipController = AVPictureInPictureController(playerLayer: playerLayer)
             pipController.delegate=self
+        
             
 //            pipPossibleObservation = pipController.observe(self,options: [.initial,.new]{[weak self] _,change in pipBtn.isEnabled=change.newValue??false})
         }else{
@@ -88,7 +89,7 @@ class SecondViewController:UIViewController,AVPictureInPictureControllerDelegate
     }
     func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         print("pictureInPictureControllerDidStartPictureInPicture")
-        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
     }
     
     func pictureInPictureControllerWillStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {

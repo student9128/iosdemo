@@ -38,6 +38,8 @@ class UIKitListViewController:UIViewController,UITableViewDelegate,UITableViewDa
         cell?.onTapAction={
             print("点击了\(indexPath.section),\(content)")
             self.handleClickAction(label: "\(content)")
+            
+        }
         return cell!
     }
     
@@ -59,7 +61,7 @@ class UIKitListViewController:UIViewController,UITableViewDelegate,UITableViewDa
         switch label{
         case "UILabel":
             vc=UILabelViewController()
-//            self.navigationController?.pushViewController(lableVc, animated: true)
+            //            self.navigationController?.pushViewController(lableVc, animated: true)
             break
         case "UIButton":
             vc=UIButtonController()
@@ -74,7 +76,7 @@ class UIKitListViewController:UIViewController,UITableViewDelegate,UITableViewDa
             break
         }
         if let temp=vc{
-           print("不为null")
+            print("不为null")
             self.navigationController?.pushViewController(temp, animated: true)
         }else{
             print("为null")
