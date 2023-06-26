@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import AVKit
+import MediaPlayer
 
 class SixViewController:UIViewController{
     var playerWithItem:AVPlayer?
@@ -22,17 +23,18 @@ class SixViewController:UIViewController{
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
         let playerItem = AVPlayerItem(url:URL(string: url)!)
-        playerWithItem = AVPlayer(playerItem: playerItem)
-        playerWithItem!.rate=1.0
-        playerLayer = AVPlayerLayer.init(player: playerWithItem)
+//        playerWithItem = AVPlayer(playerItem: playerItem)
+//        playerWithItem!.rate=1.0
+//        playerLayer = AVPlayerLayer.init(player: playerWithItem)
         // Set up player
-//        let videoURL = URL(string: url)!
-//        self.player = AVPlayer(url: videoURL)
-//        self.playerLayer = AVPlayerLayer(player: self.player)
+        let videoURL = URL(string: url)!
+        self.player = AVPlayer(url: videoURL)
+        self.playerLayer = AVPlayerLayer(player: self.player)
         playerLayer.frame=CGRect(x: 0, y: 0, width: width, height: 300)
         self.view.layer.addSublayer(self.playerLayer)
-//        self.player?.play()
-        playerLayer.player?.play()
+        self.player?.play()
+        
+//        playerLayer.player?.play()
         PictureInPictureManager.shared.initPiPManager(playerLayer: playerLayer)
         let x=PictureInPictureManager.shared.canStartPipAuto
         print("x===\(x)")

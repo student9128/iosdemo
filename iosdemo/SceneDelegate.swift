@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -19,6 +19,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("scene==willConnectTo=========")
         guard let _ = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: scene as! UIWindowScene)
+        
+        // 开启远程控制
+         UIApplication.shared.beginReceivingRemoteControlEvents()
+        // 设置音频会话为播放模式
+             let audioSession = AVAudioSession.sharedInstance()
+             do {
+                 try audioSession.setCategory(.playback, mode: .default,options: [.allowAirPlay, .allowBluetooth])
+                 try audioSession.setActive(true)
+             } catch {
+                 print("Error setting category or activating audio session: \(error.localizedDescription)")
+             }
+        
 //        let viewController = ViewController()
         let tabController = TabViewController()
         let nav=UINavigationController.init(rootViewController: tabController)
