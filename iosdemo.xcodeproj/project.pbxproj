@@ -36,6 +36,7 @@
 		74C2B91929E300EF00C84FEE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2B91829E300EF00C84FEE /* SecondViewController.swift */; };
 		74C2B91B29E30DE900C84FEE /* UtilX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2B91A29E30DE900C84FEE /* UtilX.swift */; };
 		74CE2B1B29E79DCC005A6258 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B1A29E79DCC005A6258 /* ThirdViewController.swift */; };
+		74D56E742A4A81300050F614 /* SevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D56E732A4A81300050F614 /* SevenViewController.swift */; };
 		74E5A93D29F77C3F003431C3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5A93C29F77C3F003431C3 /* BaseViewController.swift */; };
 		74E5A93F29F7AE2D003431C3 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5A93E29F7AE2D003431C3 /* FifthViewController.swift */; };
 		74E5A96729F7F157003431C3 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5A96629F7F157003431C3 /* ListView.swift */; };
@@ -104,6 +105,7 @@
 		74C2B91829E300EF00C84FEE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		74C2B91A29E30DE900C84FEE /* UtilX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilX.swift; sourceTree = "<group>"; };
 		74CE2B1A29E79DCC005A6258 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		74D56E732A4A81300050F614 /* SevenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenViewController.swift; sourceTree = "<group>"; };
 		74E5A93C29F77C3F003431C3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		74E5A93E29F7AE2D003431C3 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		74E5A96629F7F157003431C3 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				74E5A93E29F7AE2D003431C3 /* FifthViewController.swift */,
 				74155D2A2A47E40000440A8B /* PictureInPictureManager.swift */,
 				749FEF8A2A481B350003B6D3 /* VideoPlayer.swift */,
+				74D56E732A4A81300050F614 /* SevenViewController.swift */,
 			);
 			path = iosdemo;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				74E5A96729F7F157003431C3 /* ListView.swift in Sources */,
 				74C2B91929E300EF00C84FEE /* SecondViewController.swift in Sources */,
 				7440400229ED46F300E2DAAF /* Home.swift in Sources */,
+				74D56E742A4A81300050F614 /* SevenViewController.swift in Sources */,
 				74A8504729DA6E0E0032823A /* TestViewController.swift in Sources */,
 				7474948D29E7D76C00391854 /* UIDeviceExtension.swift in Sources */,
 				74A8504329DA6E0E0032823A /* AppDelegate.swift in Sources */,

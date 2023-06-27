@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: scene as! UIWindowScene)
         
         // 开启远程控制
-         UIApplication.shared.beginReceivingRemoteControlEvents()
+//         UIApplication.shared.beginReceivingRemoteControlEvents()
         // 设置音频会话为播放模式
              let audioSession = AVAudioSession.sharedInstance()
              do {

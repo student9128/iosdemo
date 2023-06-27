@@ -43,3 +43,25 @@ let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 let nativeScreenWidth=UIScreen.main.nativeBounds.width;
 let nativeScreenHeight=UIScreen.main.nativeBounds.height;
+
+func logV(_ message:String){
+    print("✈️\(message)\n")
+}
+func logE(_ message:String){
+    print("🈲\(message)\n")
+}
+func logI(_ message:String){
+    print("🌿\(message)\n")
+}
+func logW(_ message:String){
+    print("⚠️\(message)\n")
+}
+func logD(_ message:String){
+    print("🔵\(message)\n")
+}
+func logPurple(_ message:String){
+    print("🟣\(message)\n")
+}
+func logCyan(_ message:String){
+    print("🗳️\(message)\n")
+}
