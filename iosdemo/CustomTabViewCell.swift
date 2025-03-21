@@ -18,6 +18,8 @@ class CustomTabViewCell:UITableViewCell{
         let tabCell = CustomTabViewCellBySwiftUI()
         let cell = tabCell.customTabViewCell(tabCellModel: tabCellModel)
         self.addSubview(cell.view)
+        self.layer.cornerRadius = 10
+        self.layer.masksToBounds = true
         cell.view.snp.makeConstraints({make in
 //            make.width.equalTo(200)
 //            make.height.equalTo(50)
@@ -25,7 +27,7 @@ class CustomTabViewCell:UITableViewCell{
             make.left.equalTo(self).offset(15)
             make.right.equalTo(self).offset(-15)
             make.top.equalTo(self).offset(15)
-//            make.bottom.equalTo(self)
+            make.bottom.equalTo(self).offset(-15)
         })
         cell.view.backgroundColor=UIColor.clear
         //可以通过这个赋值

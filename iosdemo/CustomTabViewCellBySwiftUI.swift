@@ -68,7 +68,7 @@ struct ListViewItem:View{
                 .fontWeight(.bold)
                 .frame(alignment: .leading)
             Spacer()
-        }
+        }.background(Color.blue).cornerRadius(10)
         //        }
     }
 }
